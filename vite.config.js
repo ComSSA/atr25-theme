@@ -2,10 +2,59 @@ const { resolve } = require("path");
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import copy from "rollup-plugin-copy";
+import { exec, execSync } from "child_process";
+import fs from "fs";
+import os from "os";
+import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(),
+    {
+      name: "clear-redis-cache",
+      buildEnd() {
+        try {
+          console.log("\nClearing Redis cache...");
+          const containerName = "ctfd_atr2025-cache-1"; // Depending on your setup, this might need to be changed
+          const containerId = execSync(`docker ps --filter "name=${containerName}" --format "{{.ID}}"`).toString().trim();
+
+          if (!containerId) {
+            console.error(`\nCould not find container with name "${containerName}"`);
+            return;
+          }
+
+          const luaScript = `
+            local keys = redis.call('keys', '*')
+            for i=1,#keys,1 do
+              if string.sub(keys[i], 1, 19) ~= 'flask_cache_session' then
+                redis.call('del', keys[i])
+              end
+            end
+          `;
+          
+          const tmpFileName = "clear_redis_cache.lua";
+          const tmpFilePath = path.join(os.tmpdir(), tmpFileName);
+          fs.writeFileSync(tmpFilePath, luaScript);
+
+          const command = `docker cp ${tmpFilePath} ${containerId}:/tmp/${tmpFileName} && docker exec -i ${containerId} redis-cli --eval /tmp/${tmpFileName}`;
+          console.log(`Running command: ${command}`);
+          exec(command, (err, stdout, stderr) => {
+            if (err) {
+              console.error(`\nError clearing cache: ${err}`);
+              return;
+            }
+            if (stderr) {
+              console.error(`\nError output: ${stderr}`);
+              return;
+            }
+            console.log(`\nCleared Redis cache for container "${containerName}"`);
+          });
+        } catch (error) {
+          console.error(`\nError executing docker command: ${error.message}`);
+        }
+      },
+    }
+  ],
   resolve: {
     alias: {
       "~": resolve(__dirname, "./node_modules/"),
@@ -63,7 +112,6 @@ export default defineConfig({
         users_private: resolve(__dirname, "assets/js/users/private.js"),
         users_list: resolve(__dirname, "assets/js/users/list.js"),
         main: resolve(__dirname, "assets/scss/main.scss"),
-        color_mode_switcher: resolve(__dirname, "assets/js/color_mode_switcher.js"),
       },
     },
   },
