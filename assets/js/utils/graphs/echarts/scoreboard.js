@@ -8,11 +8,18 @@ export function getOption(mode, places, optionMerge) {
     title: {
       left: "center",
       text: "Top 10 " + (mode === "teams" ? "Teams" : "Users"),
+      textStyle: {
+        color: "#00ff00",
+        fontFamily: "'Share Tech Mono', monospace",
+      }
     },
     tooltip: {
       trigger: "axis",
       axisPointer: {
         type: "cross",
+        lineStyle: {
+          color: "#00ffcc",
+        }
       },
     },
     legend: {
@@ -21,28 +28,65 @@ export function getOption(mode, places, optionMerge) {
       align: "left",
       bottom: 35,
       data: [],
+      textStyle: {
+        color: "#00ff00",
+      },
     },
     toolbox: {
+      iconStyle: {
+        borderColor: "#00ff00",
+      },
       feature: {
         dataZoom: {
           yAxisIndex: "none",
         },
         saveAsImage: {},
+        title: "Download",
+          iconStyle: {
+            borderColor: "#00ff00",
+          },
       },
     },
     grid: {
       containLabel: true,
+      borderColor: "#00ff00",
     },
     xAxis: [
       {
         type: "time",
         boundaryGap: false,
+        axisLine: {
+          lineStyle: {
+            color: "#00ff00",
+          },
+        },
+        axisLabel: {
+          color: "#00ff00",
+        },
+        splitLine: {
+          lineStyle: {
+            color: "#004400",
+          },
+        },
         data: [],
       },
     ],
     yAxis: [
       {
         type: "value",
+        axisLine: {
+          lineStyle: {
+            color: "#00ff00",
+          },
+        },
+        axisLabel: {
+          color: "#00ff00",
+        },
+        splitLine: {
+          lineStyle: {
+            color: "#004400",
+          },
+        },
       },
     ],
     dataZoom: [
@@ -51,9 +95,16 @@ export function getOption(mode, places, optionMerge) {
         type: "slider",
         xAxisIndex: [0],
         filterMode: "filter",
-        height: 20,
-        top: 35,
+        height: 10,
+        bottom: 10,
+        backgroundColor: "#111",
         fillerColor: "rgba(233, 236, 241, 0.4)",
+        handleStyle: {
+          color: "#00ff00",
+        },
+        textStyle: {
+          color: "#00ff00",
+        },
       },
     ],
     series: [],

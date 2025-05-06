@@ -1,6 +1,11 @@
 @use "bootstrap/scss/bootstrap" as * with (
-  $primary: #ff0000,
-  $info: #5c728f
+  $primary: #00ff00,
+  $secondary: #008f11,
+  $info: #00ffcc,
+  $body-bg: #000000,
+  $body-color: #00ff00,
+  $link-color: #00ff00,
+  $link-hover-color: #00cc00
 );
 
 @use "includes/components/table";
@@ -41,7 +46,7 @@ select {
 
 .fa-spin.spinner {
   text-align: center;
-  opacity: 0.5;
+  opacity: 0.5; 
 }
 
 .badge-notification {
@@ -53,4 +58,17 @@ select {
 .form-select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e");
   background-size: 8px 10px;
+}
+body {
+  font-family: 'Share Tech Mono', monospace;
+  text-shadow: 0 0 3px $primary;
+}
+
+.btn-primary {
+  box-shadow: 0 0 10px $primary;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid $primary;
 }
