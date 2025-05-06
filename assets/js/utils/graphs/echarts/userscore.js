@@ -8,6 +8,10 @@ export function getOption(id, name, solves, awards, optionMerge) {
     title: {
       left: "center",
       text: "Score over Time",
+      textStyle: {
+        color: "#00ff00",
+        fontFamily: "'Share Tech Mono', monospace",
+      },
     },
     tooltip: {
       trigger: "axis",
@@ -19,8 +23,12 @@ export function getOption(id, name, solves, awards, optionMerge) {
       type: "scroll",
       orient: "horizontal",
       align: "left",
-      bottom: 0,
+      bottom: 30,
       data: [name],
+      textStyle: {
+        color: "#00ff00",
+        fontFamily: "'Share Tech Mono', monospace",
+      },
     },
     toolbox: {
       feature: {
@@ -35,11 +43,22 @@ export function getOption(id, name, solves, awards, optionMerge) {
         type: "category",
         boundaryGap: false,
         data: [],
+        axisLine: { lineStyle: { color: "#00ff00" } },
+        axisLabel: { color: "#00ff00" },
+        splitLine: { show: false },
       },
     ],
     yAxis: [
       {
         type: "value",
+        axisLine: { lineStyle: { color: "#00ff00" } },
+        axisLabel: { color: "#00ff00" },
+        splitLine: {
+          lineStyle: {
+            color: "#004400",
+            type: "dashed",
+          },
+        },
       },
     ],
     dataZoom: [
@@ -48,9 +67,17 @@ export function getOption(id, name, solves, awards, optionMerge) {
         type: "slider",
         xAxisIndex: [0],
         filterMode: "filter",
-        height: 20,
-        top: 35,
-        fillerColor: "rgba(233, 236, 241, 0.4)",
+        height: 10,
+        bottom: 0,
+        fillerColor: "rgba(0, 255, 0, 0.2)",
+        borderColor: "#00ff00",
+        handleStyle: {
+          color: "#00ff00",
+        },
+        textStyle: {
+          color: "#00ff00",
+        },
+        backgroundColor: "#111",
       },
     ],
     series: [],
@@ -85,6 +112,8 @@ export function getOption(id, name, solves, awards, optionMerge) {
       normal: {
         show: true,
         position: "top",
+        color: "#00ff00",
+        fontFamily: "'Share Tech Mono', monospace",
       },
     },
     areaStyle: {
@@ -95,6 +124,8 @@ export function getOption(id, name, solves, awards, optionMerge) {
     itemStyle: {
       normal: {
         color: colorHash(name + id),
+        shadowBlur: 10,
+        shadowColor: "#00ff00",
       },
     },
     data: cumulativeSum(scores),
@@ -103,5 +134,6 @@ export function getOption(id, name, solves, awards, optionMerge) {
   if (optionMerge) {
     option = mergeObjects(option, optionMerge);
   }
+
   return option;
 }
