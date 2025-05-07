@@ -49,6 +49,7 @@ export function getOption(mode, places, optionMerge) {
       data: [],
       textStyle: {
         color: "#00ff00",
+        fontFamily: "'Share Tech Mono', monospace",
       },
     },
     toolbox: {
@@ -61,9 +62,9 @@ export function getOption(mode, places, optionMerge) {
         },
         saveAsImage: {},
         title: "Download",
-          iconStyle: {
-            borderColor: "#00ff00",
-          },
+        iconStyle: {
+          borderColor: "#00ff00",
+        },
       },
     },
     grid: {
@@ -121,15 +122,23 @@ export function getOption(mode, places, optionMerge) {
         type: "slider",
         xAxisIndex: [0],
         filterMode: "filter",
-        height: 10,
+        height: 15,
         bottom: 10,
-        backgroundColor: "#111",
-        fillerColor: "rgba(233, 236, 241, 0.4)",
+        fillerColor: "rgba(0, 255, 0, 0.3)",
+        moveHandleStyle: {
+          color: "#008800",
+        },
         handleStyle: {
           color: "#00ff00",
         },
         textStyle: {
           color: "#00ff00",
+        },
+        backgroundColor: "#212529",
+        emphasis: {
+          moveHandleStyle: {
+            color: "#00ff00",
+          },
         },
       },
     ],

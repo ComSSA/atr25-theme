@@ -17,13 +17,34 @@ export function getOption(id, name, solves, awards, optionMerge) {
       trigger: "axis",
       axisPointer: {
         type: "cross",
+        label: {
+          backgroundColor: "#212529",
+          color: "#ffffff",
+          borderColor: "#00ff00",
+          borderWidth: 1,
+          padding: [5, 10],
+          fontFamily: "'Share Tech Mono', monospace",
+        },
+        crossStyle: {
+          color: "#00ff00",
+        },
+        lineStyle: {
+          color: "#00ff00",
+        },
+      },
+      backgroundColor: "#212529",
+      borderColor: "#00ff00",
+      borderWidth: 1,
+      textStyle: {
+        color: "#ffffff",
+        fontFamily: "'Share Tech Mono', monospace",
       },
     },
     legend: {
       type: "scroll",
       orient: "horizontal",
       align: "left",
-      bottom: 30,
+      bottom: 35,
       data: [name],
       textStyle: {
         color: "#00ff00",
@@ -31,32 +52,53 @@ export function getOption(id, name, solves, awards, optionMerge) {
       },
     },
     toolbox: {
+      iconStyle: {
+        borderColor: "#00ff00",
+      },
       feature: {
+        dataZoom: {
+          yAxisIndex: "none",
+        },
         saveAsImage: {},
+        title: "Download",
+        iconStyle: {
+          borderColor: "#00ff00",
+        },
       },
     },
     grid: {
       containLabel: true,
+      borderColor: "#00ff00",
     },
     xAxis: [
       {
-        type: "category",
+        type: "time",
         boundaryGap: false,
         data: [],
-        axisLine: { lineStyle: { color: "#00ff00" } },
-        axisLabel: { color: "#00ff00" },
-        splitLine: { show: false },
+        axisLine: {
+          lineStyle: {
+            color: "#00ff00"
+          }
+        },
+        axisLabel: {
+          color: "#00ff00",
+          fontFamily: "'Share Tech Mono', monospace"
+        },
+        splitLine: {
+          lineStyle: {
+            color: "#005500",
+          },
+        },
       },
     ],
     yAxis: [
       {
         type: "value",
         axisLine: { lineStyle: { color: "#00ff00" } },
-        axisLabel: { color: "#00ff00" },
+        axisLabel: { color: "#00ff00", fontFamily: "'Share Tech Mono', monospace" },
         splitLine: {
           lineStyle: {
-            color: "#004400",
-            type: "dashed",
+            color: "#005500",
           },
         },
       },
@@ -67,17 +109,25 @@ export function getOption(id, name, solves, awards, optionMerge) {
         type: "slider",
         xAxisIndex: [0],
         filterMode: "filter",
-        height: 10,
-        bottom: 0,
-        fillerColor: "rgba(0, 255, 0, 0.2)",
+        height: 15,
+        bottom: 10,
+        fillerColor: "rgba(0, 255, 0, 0.1)",
         borderColor: "#00ff00",
+        moveHandleStyle: {
+          color: "#008800",
+        },
         handleStyle: {
           color: "#00ff00",
         },
         textStyle: {
           color: "#00ff00",
         },
-        backgroundColor: "#111",
+        backgroundColor: "#212529",
+        emphasis: {
+          moveHandleStyle: {
+            color: "#00ff00",
+          },
+        },
       },
     ],
     series: [],
@@ -102,7 +152,11 @@ export function getOption(id, name, solves, awards, optionMerge) {
   }
 
   times.forEach(time => {
-    option.xAxis[0].data.push(time);
+    option.xAxis[0].data.push(time.getTime());
+  });
+
+  const seriesData = times.map((time, index) => {
+    return [time, cumulativeSum(scores)[index]];
   });
 
   option.series.push({
@@ -119,16 +173,15 @@ export function getOption(id, name, solves, awards, optionMerge) {
     areaStyle: {
       normal: {
         color: colorHash(name + id),
+        opacity: 0.4,
       },
     },
     itemStyle: {
       normal: {
         color: colorHash(name + id),
-        shadowBlur: 10,
-        shadowColor: "#00ff00",
       },
     },
-    data: cumulativeSum(scores),
+    data: seriesData,
   });
 
   if (optionMerge) {
