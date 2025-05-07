@@ -122,7 +122,7 @@
             <thead>
             <tr>
               <th>{% trans %}Challenge{% endtrans %}</th>
-              <th class="d-none d-md-block d-lg-block">{% trans %}Category{% endtrans %}</th>
+              <th class="d-none d-md-table-cell d-lg-table-cell">{% trans %}Category{% endtrans %}</th>
               <th>{% trans %}Value{% endtrans %}</th>
               <th>{% trans %}Time{% endtrans %}</th>
             </tr>
@@ -135,7 +135,7 @@
                     {{ solve.challenge.name }}
                   </a>
                 </td>
-                <td class="d-none d-md-block d-lg-block">{{ solve.challenge.category }}</td>
+                <td class="d-none d-md-table-cell d-lg-table-cell">{{ solve.challenge.category }}</td>
                 <td>{{ solve.challenge.value }}</td>
                 <td class="solve-time">
                   <span data-time="{{ solve.date | isoformat }}"></span>
