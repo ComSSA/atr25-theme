@@ -2,6 +2,7 @@ import { colorHash } from "@ctfdio/ctfd-js/ui";
 import { mergeObjects } from "../../objects";
 import { cumulativeSum } from "../../math";
 import dayjs from "dayjs";
+import { color } from "echarts";
 
 export function getOption(mode, places, optionMerge) {
   let option = {
@@ -17,9 +18,27 @@ export function getOption(mode, places, optionMerge) {
       trigger: "axis",
       axisPointer: {
         type: "cross",
+        label: {
+          backgroundColor: "#212529",
+          color: "#ffffff",
+          borderColor: "#00ff00",
+          borderWidth: 1,
+          padding: [5, 10],
+          fontFamily: "'Share Tech Mono', monospace",
+        },
+        crossStyle: {
+          color: "#00ff00",
+        },
         lineStyle: {
-          color: "#00ffcc",
-        }
+          color: "#00ff00",
+        },
+      },
+      backgroundColor: "#212529",
+      borderColor: "#00ff00",
+      borderWidth: 1,
+      textStyle: {
+        color: "#ffffff",
+        fontFamily: "'Share Tech Mono', monospace",
       },
     },
     legend: {
@@ -60,12 +79,18 @@ export function getOption(mode, places, optionMerge) {
             color: "#00ff00",
           },
         },
+        axisTick: {
+          lineStyle: {
+            color: "#00ff00",
+          },
+        },
         axisLabel: {
           color: "#00ff00",
+          fontFamily: "'Share Tech Mono', monospace",
         },
         splitLine: {
           lineStyle: {
-            color: "#004400",
+            color: "#005500",
           },
         },
         data: [],
@@ -76,15 +101,16 @@ export function getOption(mode, places, optionMerge) {
         type: "value",
         axisLine: {
           lineStyle: {
-            color: "#00ff00",
+            color: "#ae19bb",
           },
         },
         axisLabel: {
           color: "#00ff00",
+          fontFamily: "'Share Tech Mono', monospace",
         },
         splitLine: {
           lineStyle: {
-            color: "#004400",
+            color: "#005500",
           },
         },
       },

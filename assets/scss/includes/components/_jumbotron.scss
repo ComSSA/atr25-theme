@@ -13,6 +13,9 @@ main {
 
   background-color: var(--bs-dark);
   color: var(--bs-white);
+  .container {
+    font-family: 'Space Tech Mono', monospace!important;
+  }
 }
 
 @media (min-width: 576px) {
