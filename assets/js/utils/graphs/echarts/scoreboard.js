@@ -124,7 +124,7 @@ export function getOption(mode, places, optionMerge) {
         filterMode: "filter",
         height: 15,
         bottom: 10,
-        fillerColor: "rgba(0, 255, 0, 0.3)",
+        fillerColor: "rgba(0, 255, 0, 0.1)",
         moveHandleStyle: {
           color: "#008800",
         },

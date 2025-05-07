@@ -112,7 +112,6 @@ export function getOption(id, name, solves, awards, optionMerge) {
         height: 15,
         bottom: 10,
         fillerColor: "rgba(0, 255, 0, 0.1)",
-        borderColor: "#00ff00",
         moveHandleStyle: {
           color: "#008800",
         },
