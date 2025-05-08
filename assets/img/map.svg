@@ -1,0 +1,26 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 496" width="1020" height="496">
+	<title>test2</title>
+	<style>
+		.joins { fill: #5eb974;stroke: #ffffff;stroke-miterlimit:100;stroke-width: 3 } 
+		.rooms { fill: #29c830;stroke: #ffffff;stroke-miterlimit:100;stroke-width: 3 } 
+	</style>
+	<path id="H-203-202.2" fill-rule="evenodd" class="joins" d="m266 296v60h-109v-60z"/>
+	<path id="H-202.2-202" fill-rule="evenodd" class="joins" d="m540 329v60h-109v-60z"/>
+	<path id="H-205-206" fill-rule="evenodd" class="joins" d="m540 60v60h-109v-60z"/>
+	<path id="H-204-205" fill-rule="evenodd" class="joins" d="m327 60v60h-109v-60z"/>
+	<path id="H-206-207" fill-rule="evenodd" class="joins" d="m714 60v60h-109v-60z"/>
+	<path id="H-207-208" fill-rule="evenodd" class="joins" d="m885 60v60h-109v-60z"/>
+	<path id="V-203-204" fill-rule="evenodd" class="joins" d="m165 292h-60v-109h60z"/>
+	<path id="V-202-206" fill-rule="evenodd" class="joins" d="m621 326h-60v-109h60z"/>
+	<path id="V-202.2-205" fill-rule="evenodd" class="joins" d="m428 326h-60v-109h60z"/>
+	<path id="V-202-207" fill-rule="evenodd" class="joins" d="m801 328h-60v-109h60z"/>
+	<path id="V-202-208" fill-rule="evenodd" class="joins" d="m965 328h-60v-109h60z"/>
+	<path id="204" fill-rule="evenodd" class="rooms" d="m245 4v182h-182v-136.8l45.2-45.2z"/>
+	<path id="206" fill-rule="evenodd" class="rooms" d="m635 3v229h-107.8l-43.2-43.2v-142.6l43.2-43.2z"/>
+	<path id="208" fill-rule="evenodd" class="rooms" d="m1017 231h-149v-228h103.8l45.2 45.2z"/>
+	<path id="205" fill-rule="evenodd" class="rooms" d="m442 2v231h-113.8l-42.2-42.2v-188.8z"/>
+	<path id="207" fill-rule="evenodd" class="rooms" d="m826 231h-103.8l-45.2-45.2v-182.8h103.8l45.2 45.2z"/>
+	<path id="203" fill-rule="evenodd" class="rooms" d="m176 455h-130.8l-43.2-43.2v-104.6l43.2-43.2h130.8z"/>
+	<path id="202.2" fill-rule="evenodd" class="rooms" d="m467 310v100.8l-44.2 44.2h-147.6l-43.2-43.2v-147.8h94v46z"/>
+	<path id="202" fill-rule="evenodd" class="rooms" d="m586.2 494l-72.2-72.2v-110.8h504v119.8l-63.2 63.2z"/>
+</svg>
