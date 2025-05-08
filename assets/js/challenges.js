@@ -472,25 +472,43 @@ class MapManager {
     if (!tooltip) {
       tooltip = document.createElement("div");
       tooltip.id = "map-tooltip";
-      tooltip.style.position = "absolute";
-      tooltip.style.background = "rgba(0, 0, 0, 0.8)";
-      tooltip.style.color = "white";
-      tooltip.style.padding = "5px";
-      tooltip.style.borderRadius = "5px";
-      tooltip.style.pointerEvents = "none";
       document.body.appendChild(tooltip);
     }
+    // Create a shadow copy element to determine the width
+    let shadowTooltip = document.createElement("div");
+    shadowTooltip.style.position = "absolute";
+    shadowTooltip.style.visibility = "hidden";
+    shadowTooltip.style.whiteSpace = "nowrap";
+    shadowTooltip.innerHTML = `
+      <div>${task.name}</div>
+      <div>${task.category} - ${task.value}</div>
+    `;
+    document.body.appendChild(shadowTooltip);
 
-    tooltip.textContent = task.name || "Task";
-    tooltip.style.left = `${x + 10}px`;
+    const tooltipWidth = shadowTooltip.offsetWidth;
+    document.body.removeChild(shadowTooltip);
+
+    const screenWidth = window.innerWidth;
+
+    // Check if the tooltip would overflow on the right side of the screen
+    let adjustedX = x + 10;
+    if (adjustedX + tooltipWidth > screenWidth) {
+      adjustedX = x - tooltipWidth - 10; // Align to the left side
+    }
+
+    tooltip.innerHTML = `
+      <div>${task.name}</div>
+      <div>${task.category} - ${task.value}</div>
+    `;
+    tooltip.style.left = `${adjustedX}px`;
     tooltip.style.top = `${y + 10}px`;
-    tooltip.style.display = "block";
-  }
+    tooltip.classList.add("visible");
+    }
 
   hideTooltip() {
     const tooltip = document.getElementById("map-tooltip");
     if (tooltip) {
-      tooltip.style.display = "none";
+      tooltip.classList.remove("visible");
     }
   }
 }

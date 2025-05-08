@@ -2,3 +2,18 @@
   width: 100%;
   max-width: 1020px;
 }
+
+#map-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  display: none;
+  flex-direction: column;
+
+  &.visible {
+    display: flex;
+  }
+}

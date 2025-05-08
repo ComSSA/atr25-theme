@@ -30,7 +30,7 @@
     ]
   },
   "assets/js/challenges.js": {
-    "file": "assets/challenges.af690f70.js",
+    "file": "assets/challenges.658352d3.js",
     "src": "assets/js/challenges.js",
     "isEntry": true,
     "imports": [
@@ -139,7 +139,7 @@
     ]
   },
   "assets/scss/main.scss": {
-    "file": "assets/main.845de2c2.css",
+    "file": "assets/main.23115e8f.css",
     "src": "assets/scss/main.scss",
     "isEntry": true
   },
