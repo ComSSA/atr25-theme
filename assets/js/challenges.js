@@ -257,6 +257,7 @@ Alpine.data("ChallengeBoard", () => ({
 
   async loadChallenges() {
     this.challenges = await CTFd.pages.challenges.getChallenges();
+    window["mapManager"] = new MapManager(this.challenges);
   },
 
   async loadChallenge(challengeId) {
