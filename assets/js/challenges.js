@@ -360,11 +360,10 @@ class MapManager {
   }
 
   async renderTasks() {
-    // filter down to tasks with tags
+    // filter down to tasks with tags and not already complete
     let tasks = this.challenges.filter(challenge => {
-      return challenge.tags && challenge.tags.length > 0;
+      return challenge.tags && challenge.tags.length > 0 && !challenge.solved_by_me;
     });
-    console.log(tasks);
     // adding new tasks icons to mapRoot
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i];
