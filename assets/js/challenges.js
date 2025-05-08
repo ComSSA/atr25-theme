@@ -5,6 +5,7 @@ import CTFd from "./index";
 
 import { Modal, Tab, Tooltip } from "bootstrap";
 import highlight from "./theme/highlight";
+import { getChallenge } from "@ctfdio/ctfd-js/pages/challenges";
 
 function addTargetBlank(html) {
   let dom = new DOMParser();
@@ -193,6 +194,7 @@ Alpine.data("ChallengeBoard", () => ({
 
   async init() {
     this.challenges = await CTFd.pages.challenges.getChallenges();
+    window["mapManager"] = new MapManager(this.challenges);
     this.loaded = true;
 
     if (window.location.hash) {
@@ -284,3 +286,132 @@ Alpine.data("ChallengeBoard", () => ({
 }));
 
 Alpine.start();
+
+class MapManager {
+  constructor(challenges) {
+    this.challenges = challenges;
+    this.icons = [];
+    this.renderBackground();
+    this.renderTasks();
+    this.registerMouseOverHook();
+    this.width = 1000;
+    this.height = 500;
+  }
+
+  getChallenges() {
+    return this.challenges;
+  }
+
+  renderBackground() {
+    const canvas = document.getElementById("map");
+    const ctx = canvas.getContext("2d");
+    const img = new Image();
+    img.src = "/themes/atr25-theme/static/img/atr_map.svg";
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
+  }
+
+  renderTasks() {
+    // filter down to tasks with tags
+    let tasks = this.challenges.filter(challenge => {
+      return challenge.tags && challenge.tags.length > 0;
+    });
+    console.log(tasks);
+    // adding new tasks icons to mapRoot
+    for (let i = 0; i < tasks.length; i++) {
+      const task = tasks[i];
+      const props = {};
+
+      // decode tags
+      for (let j = 0; j < task.tags.length; j++) {
+        const split = task.tags[j].value.split(":");
+        const key = split[0];
+        const value = split[1];
+        if (key && value) {
+          props[key] = value;
+        }
+      }
+
+      const canvas = document.getElementById("map");
+      const ctx = canvas.getContext("2d");
+
+      // Ensure props.x and props.y exist and are numbers
+      if (props.x && props.y) {
+        const x = parseInt(props.x);
+        const y = parseInt(props.y);
+
+        const img = new Image();
+        img.src = "/themes/atr25-theme/static/img/task.png";
+        img.onload = () => {
+          ctx.drawImage(img, x, y, 49, 49);
+          this.icons.push({ x, y, width: 49, height: 49, task });
+        };
+      }
+    }
+  }
+
+  registerMouseOverHook() {
+    const canvas = document.getElementById("map");
+    canvas.addEventListener("mousemove", event => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = event.clientX - rect.left;
+      const mouseY = event.clientY - rect.top;
+
+      const scaleX = rect.width / this.width;
+      const scaleY = rect.height / this.height;
+
+      // scaled mouse position against 1000x500
+      const scaledX = mouseX / scaleX;
+      const scaledY = mouseY / scaleY;
+
+      // check if mouse is over any icon
+      let found = false;
+      for (let i = 0; i < this.icons.length; i++) {
+        const icon = this.icons[i];
+        if (
+          scaledX >= icon.x &&
+          scaledX <= icon.x + icon.width &&
+          scaledY >= icon.y &&
+          scaledY <= icon.y + icon.height
+        ) {
+          found = true;
+          this.showTooltip(icon.task, event.clientX, event.clientY);
+          canvas.style.cursor = "pointer";
+          break;
+        }
+      }
+      if (!found) {
+        canvas.style.cursor = "default";
+        this.hideTooltip();
+      }
+    });
+  }
+
+  showTooltip(task, x, y) {
+    let tooltip = document.getElementById("map-tooltip");
+    if (!tooltip) {
+      tooltip = document.createElement("div");
+      tooltip.id = "map-tooltip";
+      tooltip.style.position = "absolute";
+      tooltip.style.background = "rgba(0, 0, 0, 0.8)";
+      tooltip.style.color = "white";
+      tooltip.style.padding = "5px";
+      tooltip.style.borderRadius = "5px";
+      tooltip.style.pointerEvents = "none";
+      document.body.appendChild(tooltip);
+    }
+
+    tooltip.textContent = task.name || "Task";
+    tooltip.style.left = `${x + 10}px`;
+    tooltip.style.top = `${y + 10}px`;
+    tooltip.style.display = "block";
+  }
+
+  hideTooltip() {
+    const tooltip = document.getElementById("map-tooltip");
+    if (tooltip) {
+      tooltip.style.display = "none";
+    }
+  }
+}

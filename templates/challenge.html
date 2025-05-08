@@ -34,17 +34,6 @@
               {{ challenge.value }}
             </h3>
 
-
-            {% if tags %}
-              <div class="challenge-tags text-center pt-2 pb-3">
-                {% block tags %}
-                  {% for tag in tags %}
-                    <span class="challenge-tag badge bg-info">{{ tag }}</span>
-                  {% endfor %}
-                {% endblock %}
-              </div>
-            {% endif %}
-
             <small class="challenge-attribution text-center text-muted">
               {% block attribution %}{{ challenge.byline }}{% endblock %}
             </small>

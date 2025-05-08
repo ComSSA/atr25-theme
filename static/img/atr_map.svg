@@ -1,0 +1,25 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 951 532" width="951" height="532">
+	<title>map</title>
+	<style>
+		.s0 { opacity: .6;fill: #1cce1c;stroke: #ffffff;stroke-miterlimit:100;stroke-width: 3 } 
+		.s1 { opacity: .6;fill: #59a459;stroke: #ffffff;stroke-miterlimit:100;stroke-width: 3 } 
+	</style>
+	<rect width="951" height="532" id="Color Fill 1" style="display: none;fill: #000000"/>
+	<path id="Shape 1" fill-rule="evenodd" class="s0" d="m45.5 68.5l50.5-38 79.5-1 42.5 40.5v83l0.5 33.5-125.5 1.5-48.5-37z"/>
+	<path id="Shape 2" class="s0" d="m331 34l-30 26.5 1 147.5 38.5 27.5 61.5-0.5 24-25.5 0.5-151.5-29-23.5z"/>
+	<path id="Shape 3" class="s0" d="m527 18l-42 39v129l50 33.5 73 0.5v-201z"/>
+	<path id="Shape 4" class="s0" d="m725 21l50 41-0.4 157.8-89.1-0.8-37.5-48-1-149z"/>
+	<path id="Shape 5" class="s0" d="m940 63l0.5 122.5-31.5 46.5-61.5 1-37.5-40v-136.5l26-27 74-0.5z"/>
+	<path id="Shape 6" class="s0" d="m847.5 463.5l50.5-52 1-131.5-348.5-0.5-54.5 53.5v96l66.5 36z"/>
+	<path id="Shape 7" fill-rule="evenodd" class="s0" d="m291 259l30 22 1 20h98.5l29.5 23.5 1 62.5-41 35h-123l-50-58-1-105z"/>
+	<path id="Shape 8" class="s0" d="m69 286l-45 42v96l34 20h127l-2-159z"/>
+	<path id="Shape 9" class="s1" d="m219 111.3l82.3-0.3 0.4 49.6-82.8 1.4"/>
+	<path id="Shape 11" fill-rule="evenodd" class="s1" d="m484 109.3l-0.3 48.3h-57v-49z"/>
+	<path id="Shape 10" class="s1" d="m552 266"/>
+	<path id="Shape 13" fill-rule="evenodd" class="s1" d="m647 96.6l-0.3 48.4-38.4-1v-47.7z"/>
+	<path id="Shape 14" fill-rule="evenodd" class="s1" d="m809.3 98.6v49h-33.6v-49.3z"/>
+	<path id="Shape 15" class="s1" d="m544 220.3l50.3 0.3-0.3 28.7 114.5-0.3 0.5-28.7h51.7l0.5 27.9 91.5-0.6v-14h47.3l1 39.5h-150v6.5l-56 0.4v-8h-288l-1 28.3-61-0.7 0.6-63.9 45.7 0.6h10.7l141.3-0.7z"/>
+	<path id="Shape 16" fill-rule="evenodd" class="s1" d="m494.7 343l0.3 42-43.7-0.4-0.3-41.6z"/>
+	<path id="Shape 17" fill-rule="evenodd" class="s1" d="m236.3 303l-0.3 45.3-51.7 0.3-0.3-45.3z"/>
+	<path id="Shape 18" fill-rule="evenodd" class="s1" d="m162.7 187.6l-0.7 97.7-60.3-0.3v-97z"/>
+</svg>

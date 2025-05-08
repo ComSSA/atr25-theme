@@ -30,7 +30,7 @@
     ]
   },
   "assets/js/challenges.js": {
-    "file": "assets/challenges.bf350543.js",
+    "file": "assets/challenges.21f551b9.js",
     "src": "assets/js/challenges.js",
     "isEntry": true,
     "imports": [
@@ -139,8 +139,16 @@
     ]
   },
   "assets/scss/main.scss": {
-    "file": "assets/main.e37d6d76.css",
+    "file": "assets/main.dca3981c.css",
     "src": "assets/scss/main.scss",
     "isEntry": true
+  },
+  "assets/img/atr_map.svg": {
+    "file": "assets/atr_map.7de91e58.svg",
+    "src": "assets/img/atr_map.svg"
+  },
+  "assets/img/task.png": {
+    "file": "assets/task.0dd9971a.png",
+    "src": "assets/img/task.png"
   }
 }
