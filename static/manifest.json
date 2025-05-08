@@ -116,35 +116,14 @@
       "assets/js/index.js"
     ]
   },
-  "_echarts.2dcc02d5.js": {
-    "file": "assets/echarts.2dcc02d5.js"
+  "_echarts.128204f2.js": {
+    "file": "assets/echarts.128204f2.js"
   },
   "_clipboard.3bb95f09.js": {
     "file": "assets/clipboard.3bb95f09.js",
     "imports": [
       "assets/js/index.js"
     ]
-  },
-  "_index.3813cee8.js": {
-    "file": "assets/index.3813cee8.js",
-    "imports": [
-      "_echarts.2dcc02d5.js"
-    ]
-  },
-  "_userscore.acd6abaa.js": {
-    "file": "assets/userscore.acd6abaa.js",
-    "imports": [
-      "assets/js/index.js",
-      "_index.3813cee8.js"
-    ]
-  },
-  "assets/scss/main.scss": {
-    "file": "assets/main.23115e8f.css",
-    "src": "assets/scss/main.scss",
-    "isEntry": true
-  },
-  "_echarts.128204f2.js": {
-    "file": "assets/echarts.128204f2.js"
   },
   "_index.1cf73b05.js": {
     "file": "assets/index.1cf73b05.js",
@@ -158,5 +137,10 @@
       "assets/js/index.js",
       "_index.1cf73b05.js"
     ]
+  },
+  "assets/scss/main.scss": {
+    "file": "assets/main.2267d33d.css",
+    "src": "assets/scss/main.scss",
+    "isEntry": true
   }
 }
