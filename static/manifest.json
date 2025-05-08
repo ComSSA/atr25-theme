@@ -38,13 +38,13 @@
     ]
   },
   "assets/js/scoreboard.js": {
-    "file": "assets/scoreboard.f5c591a9.js",
+    "file": "assets/scoreboard.48a803dd.js",
     "src": "assets/js/scoreboard.js",
     "isEntry": true,
     "imports": [
       "assets/js/index.js",
-      "_index.3813cee8.js",
-      "_echarts.2dcc02d5.js"
+      "_index.1cf73b05.js",
+      "_echarts.128204f2.js"
     ]
   },
   "assets/js/notifications.js": {
@@ -56,26 +56,26 @@
     ]
   },
   "assets/js/teams/public.js": {
-    "file": "assets/teams_public.b3137693.js",
+    "file": "assets/teams_public.bb3e0398.js",
     "src": "assets/js/teams/public.js",
     "isEntry": true,
     "imports": [
       "assets/js/index.js",
-      "_userscore.acd6abaa.js",
-      "_index.3813cee8.js",
-      "_echarts.2dcc02d5.js"
+      "_userscore.7ccec63a.js",
+      "_index.1cf73b05.js",
+      "_echarts.128204f2.js"
     ]
   },
   "assets/js/teams/private.js": {
-    "file": "assets/teams_private.660e386d.js",
+    "file": "assets/teams_private.641d3052.js",
     "src": "assets/js/teams/private.js",
     "isEntry": true,
     "imports": [
       "assets/js/index.js",
       "_clipboard.3bb95f09.js",
-      "_userscore.acd6abaa.js",
-      "_index.3813cee8.js",
-      "_echarts.2dcc02d5.js"
+      "_userscore.7ccec63a.js",
+      "_index.1cf73b05.js",
+      "_echarts.128204f2.js"
     ]
   },
   "assets/js/teams/list.js": {
@@ -87,25 +87,25 @@
     ]
   },
   "assets/js/users/public.js": {
-    "file": "assets/users_public.f2841f5e.js",
+    "file": "assets/users_public.a93e69b1.js",
     "src": "assets/js/users/public.js",
     "isEntry": true,
     "imports": [
       "assets/js/index.js",
-      "_userscore.acd6abaa.js",
-      "_index.3813cee8.js",
-      "_echarts.2dcc02d5.js"
+      "_userscore.7ccec63a.js",
+      "_index.1cf73b05.js",
+      "_echarts.128204f2.js"
     ]
   },
   "assets/js/users/private.js": {
-    "file": "assets/users_private.100c8709.js",
+    "file": "assets/users_private.5bffcd21.js",
     "src": "assets/js/users/private.js",
     "isEntry": true,
     "imports": [
       "assets/js/index.js",
-      "_userscore.acd6abaa.js",
-      "_index.3813cee8.js",
-      "_echarts.2dcc02d5.js"
+      "_userscore.7ccec63a.js",
+      "_index.1cf73b05.js",
+      "_echarts.128204f2.js"
     ]
   },
   "assets/js/users/list.js": {
@@ -143,12 +143,20 @@
     "src": "assets/scss/main.scss",
     "isEntry": true
   },
-  "assets/img/atr_map.svg": {
-    "file": "assets/atr_map.7de91e58.svg",
-    "src": "assets/img/atr_map.svg"
+  "_echarts.128204f2.js": {
+    "file": "assets/echarts.128204f2.js"
   },
-  "assets/img/task.png": {
-    "file": "assets/task.0dd9971a.png",
-    "src": "assets/img/task.png"
+  "_index.1cf73b05.js": {
+    "file": "assets/index.1cf73b05.js",
+    "imports": [
+      "_echarts.128204f2.js"
+    ]
+  },
+  "_userscore.7ccec63a.js": {
+    "file": "assets/userscore.7ccec63a.js",
+    "imports": [
+      "assets/js/index.js",
+      "_index.1cf73b05.js"
+    ]
   }
 }

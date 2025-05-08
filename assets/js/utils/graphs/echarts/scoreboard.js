@@ -2,7 +2,6 @@ import { colorHash } from "@ctfdio/ctfd-js/ui";
 import { mergeObjects } from "../../objects";
 import { cumulativeSum } from "../../math";
 import dayjs from "dayjs";
-import { color } from "echarts";
 
 export function getOption(mode, places, optionMerge) {
   let option = {

@@ -5,7 +5,6 @@ import CTFd from "./index";
 
 import { Modal, Tab, Tooltip } from "bootstrap";
 import highlight from "./theme/highlight";
-import { getChallenge } from "@ctfdio/ctfd-js/pages/challenges";
 
 function addTargetBlank(html) {
   let dom = new DOMParser();
