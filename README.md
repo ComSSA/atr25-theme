@@ -29,3 +29,5 @@ Uses tags as options for the map.
 - `x:int` - x coordinate on canvas
 - `y:int` - y coordinate on canvas
 - `c:0` - if set, hide category in tooltip
+
+Requires https://github.com/s3ansh33p/ctfd-event-countdown to be installed in plugins
