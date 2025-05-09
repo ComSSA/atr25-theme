@@ -23,3 +23,9 @@ Make sure to use Merge Commits when dealing with the subtree here. For some reas
 
 - Document how we are using Vite
 - Create a cookie cutter template package to use with Vite
+
+## Map
+Uses tags as options for the map.
+- `x:int` - x coordinate on canvas
+- `y:int` - y coordinate on canvas
+- `c:0` - if set, hide category in tooltip

@@ -474,6 +474,18 @@ class MapManager {
       tooltip.id = "map-tooltip";
       document.body.appendChild(tooltip);
     }
+
+    let category = task.category;
+    // if there is a tag of c:0, then don't show category
+    if (task.tags) {
+      for (let i = 0; i < task.tags.length; i++) {
+        const tag = task.tags[i];
+        if (tag.value === "c:0") {
+          category = "";
+          break;
+        }
+      }
+    }
     // Create a shadow copy element to determine the width
     let shadowTooltip = document.createElement("div");
     shadowTooltip.style.position = "absolute";
@@ -481,7 +493,7 @@ class MapManager {
     shadowTooltip.style.whiteSpace = "nowrap";
     shadowTooltip.innerHTML = `
       <div>${task.name}</div>
-      <div>${task.category} - ${task.value}</div>
+      <div>${category != "" ? category + " - " : ""}${task.value}</div>
     `;
     document.body.appendChild(shadowTooltip);
 
@@ -498,7 +510,7 @@ class MapManager {
 
     tooltip.innerHTML = `
       <div>${task.name}</div>
-      <div>${task.category} - ${task.value}</div>
+      <div>${category != "" ? category + " - " : ""}${task.value}</div>
     `;
     tooltip.style.left = `${adjustedX}px`;
     tooltip.style.top = `${y + 10}px`;
