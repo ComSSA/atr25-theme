@@ -61,7 +61,7 @@
 
                       <div class="challenge-inner my-3">
                         <p x-text="c.name"></p>
-                        <span x-text="c.value"></span>
+                        <span x-show="c.category !== 'Clues'" x-text="c.value"></span>
                       </div>
                     </button>
                   </div>
