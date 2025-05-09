@@ -322,9 +322,9 @@ class MapManager {
 
   async renderRoomText() {
     const templateTexts = [
-      { text: "Something|Here", x: 764, y: 404, room: "202" },
-      { text: "Something|Here", x: 350, y: 380, room: "202.2" },
-      { text: "203", x: 90, y: 363, room: "203" },
+      { text: "Main Hall", x: 764, y: 404, room: "202" },
+      { text: "Reception", x: 350, y: 380, room: "202.2" },
+      { text: "Deepwell|Archive", x: 90, y: 363, room: "203" },
       { text: "Cafeteria", x: 150, y: 100, room: "204" },
       { text: "Terrestrial|History", x: 363, y: 100, room: "205" },
       { text: "Astral|Sciences", x: 560, y: 100, room: "206" },
